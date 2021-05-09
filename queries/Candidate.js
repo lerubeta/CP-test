@@ -30,7 +30,7 @@ exports.getCandidatesBySkillsArr = async (skillsArr) => {
     try {
         const collection = _db.collection("candidate");
         const result = await collection.find({
-            skills: { $all: ['python'] }
+            skills: { $all: skillsArr }
             //skills: { $in: skillsArr }
         }).toArray();
         return result;
