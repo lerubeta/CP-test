@@ -3,7 +3,7 @@ const { getDb } = require('../config/dbConnection');
 exports.addCandidate = async (candidate) => { 
     const _db = getDb();
     try {
-        const collection = _db.collection("candidate");
+        const collection = _db.collection("candidates");
         const result = await collection.insertOne(candidate)
         return result;
         
@@ -14,7 +14,7 @@ exports.addCandidate = async (candidate) => {
 // exports.getAllCandidates = async () => {
 //     const _db = getDb();
 //     try {
-//         const collection = _db.collection("candidate");
+//         const collection = _db.collection("candidates");
 //         const result = await collection.find({}).toArray();
 //         return result;
 
@@ -28,7 +28,7 @@ exports.getCandidatesBySkillsArr = async (skillsArr) => {
     const _db = getDb();
     console.log(skillsArr)
     try {
-        const collection = _db.collection("candidate");
+        const collection = _db.collection("candidates");
         const result = await collection.find({
             skills: { $all: skillsArr }
             //skills: { $in: skillsArr }

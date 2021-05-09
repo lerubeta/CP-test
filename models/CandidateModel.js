@@ -26,7 +26,6 @@ exports.searchSkills = async (skillsArr) => {
 const createCandidateObjectToInsert = (candidate) => {
     let skillsArr = candidate.skills.split(",")
     return {
-        id: candidate.id,
         name: candidate.name,        
         skills: skillsArr
     }
